@@ -3,5 +3,16 @@
 }
 
 .w-300 {
-	width: 300px;
+	max-width: 250px;
+	background-color: aqua;
+}
+
+.w-100 {
+	max-width: 100px;
+	background-color: rgb(247, 0, 255);
+}
+
+.card {
+	
+	background-color: rgb(247, 0, 255);
 }

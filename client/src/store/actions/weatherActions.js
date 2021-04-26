@@ -9,7 +9,7 @@ export function getWeatherInfo(cityName) {
 			// const _forecast = await weatherService.getForcast(_key[0]);
 			// const data = await Promise.all([      ,     )])
 			// key, name, icon, temp
-			const _response = [_key[0], _key[1], _currTemp[0], _currTemp[1]]
+			const _response = [_key[0], _key[1], _currTemp[0], _currTemp[1] , _currTemp[2]]
 			console.log('dispatching to reducer:', _response);
 			dispatch({ type: 'GET_WEATHER_INFO', _response });
 		} catch (err) {

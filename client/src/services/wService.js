@@ -58,7 +58,7 @@ function getCurrTempNIcon(locKey) {
 		"Link": "http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us"
 	}
 
-	return [data.WeatherIcon , data.Temperature.Metric.Value ]
+	return [data.WeatherIcon , data.Temperature.Metric.Value , data.WeatherText ]
 		
 	
 }
