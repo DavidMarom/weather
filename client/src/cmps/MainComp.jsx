@@ -1,8 +1,19 @@
 import React from 'react'
-const data = require("../../data.json");
+import { useSelector } from "react-redux";
+// const data = require("../../data.json");
 
 
-export const MainComp = ()=> {
+export const MainComp = () => {
+	const key = useSelector(state => state.weatherReducer.key);
+	const city = useSelector(state => state.weatherReducer.LocalizedName);
+	const icon = useSelector(state => state.weatherReducer.WeatherIcon);
+	const temp = useSelector(state => state.weatherReducer.Temp);
+
+
+	// const dispatch = useDispatch()
+
+
+	console.log('test redux:', key, city, icon, temp);
 	return (
 		<div className="cb">
 
@@ -28,7 +39,7 @@ export const MainComp = ()=> {
 
 			<div></div>
 			<div></div>
-			
+
 
 
 
