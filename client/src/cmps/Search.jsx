@@ -1,16 +1,25 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getWeatherInfo } from '../store/actions/weatherActions';
 
+
+
 export const Search = () => {
+	// const arr2 = ['tel aviv','london'];
+
 	const dispatch = useDispatch();
 
 	const [searchValue, setSearchValue] = useState("");
 
 	const onSubmit = (e) => {
+
+
 		e.preventDefault();
 		console.log(searchValue);
 		dispatch(getWeatherInfo(searchValue));
+
+
+
 	};
 
 	return (

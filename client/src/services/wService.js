@@ -1,13 +1,4 @@
 import axios from "axios";
-// import "./config.env";
-
-// JH8tCq9kLXUnNH017Y8aN61AcEYMHBPT
-
-// const dotenv = require("dotenv");
-
-// Setting up config file
-// dotenv.config({ path: "./config.env" });
-
 
 async function ajax(endpoint, method, data) {
 	try {
@@ -24,23 +15,24 @@ async function ajax(endpoint, method, data) {
 		throw err;
 	}
 }
+// elHwVnJyzTv9jqpZGIuQ4zC74Bdz7J2F
 
 // http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=JH8tCq9kLXUnNH017Y8aN61AcEYMHBPT&q=tel aviv&language=en-us
 async function getLocationKey(cityName) {
 	// console.log(process.env.apiKey)
-	const res = await ajax(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=JH8tCq9kLXUnNH017Y8aN61AcEYMHBPT&q=${cityName}&language=en-us`, 'get', null)
+	const res = await ajax(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=elHwVnJyzTv9jqpZGIuQ4zC74Bdz7J2F&q=${cityName}&language=en-us`, 'get', null)
 	return [res[0].Key, res[0].LocalizedName];
 }
 
 // http://dataservice.accuweather.com/currentconditions/v1/215854?apikey=JH8tCq9kLXUnNH017Y8aN61AcEYMHBPT&language=en-us&details=false
 async function getCurrTempNIcon(locKey) {
-	const res = await ajax(`http://dataservice.accuweather.com/currentconditions/v1/${locKey}?apikey=JH8tCq9kLXUnNH017Y8aN61AcEYMHBPT&language=en-us&details=false`, 'get', null)
+	const res = await ajax(`http://dataservice.accuweather.com/currentconditions/v1/${locKey}?apikey=elHwVnJyzTv9jqpZGIuQ4zC74Bdz7J2F&language=en-us&details=false`, 'get', null)
 	return [res[0].WeatherIcon, res[0].Temperature.Metric.Value, res[0].WeatherText]
 }
 
 // http://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=JH8tCq9kLXUnNH017Y8aN61AcEYMHBPT&language=en-us&details=false&metric=true
 async function getForcast(locKey) {
-	const res = await ajax(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locKey}?apikey=JH8tCq9kLXUnNH017Y8aN61AcEYMHBPT&language=en-us&details=false&metric=true`, 'get', null)
+	const res = await ajax(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locKey}?apikey=elHwVnJyzTv9jqpZGIuQ4zC74Bdz7J2F&language=en-us&details=false&metric=true`, 'get', null)
 	return res.DailyForecasts;
 }
 

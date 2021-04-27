@@ -7,6 +7,10 @@ import { Fav } from './pages/Fav';
 import { TopBar } from '../src/cmps/TopBar';
 
 export const _App = () => {
+
+
+
+
 	return (
 		<div className="App">
 
