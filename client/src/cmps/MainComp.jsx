@@ -1,17 +1,18 @@
 import React from 'react'
 import { useSelector } from "react-redux";
-// const data = require("../../data.json");
 import { Icon } from "./Icon";
+import { Utils } from "../services/Utils";
 
 export const MainComp = () => {
-	const key = useSelector(state => state.weatherReducer.key);
 	const city = useSelector(state => state.weatherReducer.LocalizedName);
 	const icon = useSelector(state => state.weatherReducer.WeatherIcon);
 	const temp = useSelector(state => state.weatherReducer.Temp);
 	const weatherText = useSelector(state => state.weatherReducer.WeatherText);
+	const foreCast = useSelector(state => state.weatherReducer.foreCast);
 
+	let date = new Date("");
 	return (
-		<div className="">
+		<div>
 
 			{/* TOP */}
 			<div className="top rb">
@@ -24,36 +25,25 @@ export const MainComp = () => {
 					</div>
 				</div>
 				<div className="right rr w-300">
-					<p>heart-icon</p>
+					<i className="fas fa-heart"></i>
 					<button>text</button>
 				</div>
 			</div>
 
-
-			<div >
-				{weatherText}
-
-			</div>
-
+			<div >{weatherText}</div>
 
 			<div className="card-grid">
 
-				<div className="card">CARD</div>
-				<div className="card">CARD</div>
-				<div className="card">CARD</div>
-				<div className="card">CARD</div>
-				<div className="card">CARD</div>
-				
-
-
+				{foreCast.map((day, idx) => {
+					date = new Date(day.Date);
+					return (
+						<div key={idx} className="card ca">
+							<p>{Utils.numToDay(date.getDay())}</p>
+							<p>{day.Temperature.Maximum.Value} °C</p>
+						</div>
+					);
+				})}
 			</div>
-
-
-
-
-
-
-
 		</div>
 	)
 }

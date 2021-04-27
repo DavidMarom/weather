@@ -1,5 +1,4 @@
 // import axios from "axios";
-const data = require("./data.json");
 
 // JH8tCq9kLXUnNH017Y8aN61AcEYMHBPT
 
@@ -64,8 +63,9 @@ function getCurrTempNIcon(locKey) {
 }
 
 // http://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=JH8tCq9kLXUnNH017Y8aN61AcEYMHBPT&language=en-us&details=false&metric=true
-function getWeatherCity(query) {
-	return {
+function getForcast(query) {
+
+	let temp = {
 		"Headline": {
 			"EffectiveDate": "2021-04-26T08:00:00+03:00",
 			"EffectiveEpochDate": 1619413200,
@@ -236,6 +236,7 @@ function getWeatherCity(query) {
 		]
 	}
 
+	return temp.DailyForecasts;
 
 
 }
@@ -243,7 +244,7 @@ function getWeatherCity(query) {
 export const weatherService = {
 	getLocationKey,
 	getCurrTempNIcon,
-	getWeatherCity
+	getForcast
 }
 
 
