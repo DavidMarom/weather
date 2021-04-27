@@ -9,13 +9,12 @@ export const Home = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getWeatherInfo());
+		dispatch(getWeatherInfo('tel aviv'));
 
 	}, [])
 
 	return (
 		<div>
-			<h1>Home</h1>
 			<Search />
 			<MainComp />
 		</div>

@@ -1,9 +1,11 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import { weatherReducer } from './reducers/weatherReducer';
+import { favReducer } from './reducers/favReducer';
 
 const rootReducer = combineReducers({
-    weatherReducer
+    weatherReducer,
+	favReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

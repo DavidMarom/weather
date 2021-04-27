@@ -26,11 +26,13 @@ export const MainComp = () => {
 				</div>
 				<div className="right rr w-300">
 					<i className="fas fa-heart"></i>
-					<button>text</button>
+					<button className="btn2">Add to Favorites</button>
 				</div>
 			</div>
 
-			<div >{weatherText}</div>
+			<div className="ra h-200">
+				<h1>{weatherText}</h1>
+			</div>
 
 			<div className="card-grid">
 

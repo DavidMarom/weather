@@ -11,20 +11,19 @@ export const Search = () => {
 		e.preventDefault();
 		console.log(searchValue);
 		dispatch(getWeatherInfo(searchValue));
-
 	};
 
 	return (
-		<div className="searchFormContainer">
+		<div className="searchFormContainer ra">
 			<form onSubmit={onSubmit}>
 				<input
-					className=""
+					className="input"
 					type="search"
 					placeholder="Search"
 					aria-label="Search"
 					onChange={(e) => setSearchValue(e.target.value)}
 				/>
-				<button className="" type="submit">
+				<button className="btn3" type="submit">
 					Search
         </button>
 			</form>

@@ -4,6 +4,7 @@ export function getWeatherInfo(cityName) {
 	return async dispatch => {
 		try {
 			const _key = await weatherService.getLocationKey(cityName);
+			console.log('CALLING getCurrTempNIcon with***** ',_key[0] );
 			const _currTemp = await weatherService.getCurrTempNIcon(_key[0]);
 			const _forecast = await weatherService.getForcast(_key[0]);
 			
